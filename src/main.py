@@ -276,7 +276,7 @@ def is_inside_airfoil(i, j):
 def start_menu(): 
     
     # Load graphic for start_menu and scale appropriately
-    image = pg.image.load(r'.\start_menu.png')
+    image = pg.image.load('start_menu.png')
     scaled_image = pg.transform.scale(image, (N*SCALE, N*SCALE)) # Scale to display size
     
     # Define 3 buttons

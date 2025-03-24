@@ -5,7 +5,34 @@ This repository contains a Python implementation of modelling real-time fluid dy
 ### Windows
 To install, press the green "Code" button, download, and extract the zip. Then, navigate to the "dist" folder and run the main.exe file.
 ### MacOS, Linux
-The pre-compiled main.exe file will not work for these systems. If [python](https://www.python.org/downloads/) is installed on the system with a run-time environment, navigate to the "src" folder and run the main.py file.
+The pre-compiled main.exe file will not work for these systems. Ensure [python](https://www.python.org/downloads/) is installed before proceeding with the steps below.
+
+We need to ensure we have the right dependencies required for the project to run. 
+1. First navigate into the root directory of the project 
+
+```
+  cd ./fluid-sim-py
+```
+2. Prepare the virtual environment and install dependencies.
+
+```
+    pip install virtualenv 
+    virtualenv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+```
+3. (Important) To ensure no errors occur when pygame tries to load shared object files run For more information follow the conversation [here](https://stackoverflow.com/a/72200748).
+
+```
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+```
+
+4. Finally, navigate to the "src" folder and run the main.py file.
+
+```
+    cd src/
+    python main.py
+```
 
 ## Examples
 The simulation accurately predicts real world phenomena such as the [Kármán vortex street](https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_vortex_street),
