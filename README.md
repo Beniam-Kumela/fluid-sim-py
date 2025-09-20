@@ -25,7 +25,7 @@ The simulation is designed for robustness with extensive in-line code documentat
   - Saved as `fluid_sim.mp4` for later viewing  
 
 ## Demo
-<video controls src="fluid-sim-py-demo.mp4" title="demo"></video>
+<video controls src="https://github.com/Beniam-Kumela/fluid-sim-py/blob/main/img/fluid-sim-py-demo.mp4" title="demo"></video>>
 
 ## Installation
 
