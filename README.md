@@ -42,13 +42,19 @@ pip install -r requirements.txt
 python src/fluid-sim.py
 ```
 
-If on Windows machine, instead of ```source venv/bin/activate``` run ```venv \Scripts\activate``` (see following [discussion](https://stackoverflow.com/questions/8921188/issue-with-virtualenv-cannot-activate))
+If on Windows machine, instead of ```source venv/bin/activate``` run ```.\venv\Scripts\Activate.ps1```. If you get an error, run PowerShell as Administrator and type:
+
+```
+Set-ExecutionPolicy RemoteSigned
+Y
+```
+Return to your terminal window, navigate back to the project directory and proceed with the `python -m venv venv` step.
 
 ## Benchmarks
 | Architecture | Avg. FPS |
 | - | - |
 | M4 | 35 |
-| i7 165U vPro |  |
+| i7 165U vPro | 15 |
 |  |  |
 
 All benchmarks were taken at Gauss-Seidel iterations = 16, grid dimension = 128x128, scaling factor = 5. Please update with this your personal machine performance.

@@ -1,4 +1,4 @@
-numpy==2.3.3
-opencv_python==4.12.0.88
-pygame==2.6.1
-pygame_gui==0.6.14
+pygame
+numpy
+opencv_python
+pygame_gui
