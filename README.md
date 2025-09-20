@@ -24,7 +24,9 @@ The simulation is designed for robustness with extensive in-line code documentat
   - Capture the simulation in real time  
   - Saved as `fluid_sim.mp4` for later viewing  
 
-## [Demo](https://youtu.be/M2LvjnQ8Ikw)
+## Demo
+![demo gif](img/fluid-sim-py-demo.gif)
+Click [here](https://youtu.be/M2LvjnQ8Ikw) for video
 
 ## Installation
 
