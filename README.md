@@ -26,7 +26,7 @@ The simulation is designed for robustness with extensive in-line code documentat
 
 ## Demo
 ![demo gif](img/fluid-sim-py-demo.gif)
-Click [here](https://youtu.be/M2LvjnQ8Ikw) for video
+Click [here](https://youtu.be/M2LvjnQ8Ikw) for high-resolution video
 
 ## Installation
 
