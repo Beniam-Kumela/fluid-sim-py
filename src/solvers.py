@@ -37,12 +37,11 @@ def lin_solve(b, x, x0, a, c, N, boundary_mask, iter=16):
     
     cRecip = 1.0 / c
     for i in range(iter):
-        x_old = x.copy()
         x[1:-1, 1:-1] = (x0[1:-1, 1:-1] + a * (
-            x_old[:-2, 1:-1] + 
-            x_old[2:, 1:-1] +
-            x_old[1:-1, :-2] + 
-            x_old[1:-1, 2:]
+            x[:-2, 1:-1] + 
+            x[2:, 1:-1] +
+            x[1:-1, :-2] + 
+            x[1:-1, 2:]
         )) * cRecip
         set_bnd(b, x, N, boundary_mask)
 
@@ -74,11 +73,15 @@ def project(velocX, velocY, p, div, N, boundary_mask):
     lin_solve(0, p, div, 1, 6, N, boundary_mask=boundary_mask)
 
     # Remove divergent component from velocity: u = u - del(p).
+    velocX[1:-1, 1:-1] -= 0.5 * (p[2:, 1:-1] - p[:-2, 1:-1]) * N
+    velocY[1:-1, 1:-1] -= 0.5 * (p[1:-1, 2:] - p[1:-1, :-2]) * N
+    '''
     for j in range(1, N - 1):
         for i in range(1, N - 1):
             velocX[i, j] -= 0.5 * (p[i + 1, j] - p[i - 1, j]) * N
             velocY[i, j] -= 0.5 * (p[i, j + 1] - p[i, j - 1]) * N
-
+    '''
+    
     # Reinforce boundary conditions for new velocity fields.
     set_bnd(1, velocX, N, boundary_mask)
     set_bnd(2, velocY, N, boundary_mask)
@@ -162,5 +165,4 @@ def set_bnd(b, x, N, boundary_mask):
 
     # Zero velocities for points on boundary mask (no-slip condition, see: https://en.wikipedia.org/wiki/No-slip_condition).
     if boundary_mask is not None:
-        mask = boundary_mask.astype(bool)
-        x[mask] = 0.0
+        x[boundary_mask] = 0.0
