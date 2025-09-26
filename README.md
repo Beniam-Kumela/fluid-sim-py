@@ -53,8 +53,8 @@ Return to your terminal window, navigate back to the project directory and proce
 ## Benchmarks
 | Architecture | Avg. FPS |
 | - | - |
-| M4 | 35 |
-| i7 165U vPro | 15 |
+| M4 | 60 |
+| i7 165U vPro | 25 |
 |  |  |
 
 All benchmarks were taken at Gauss-Seidel iterations = 16, grid dimension = 128x128, scaling factor = 5. Please update with this your personal machine performance.

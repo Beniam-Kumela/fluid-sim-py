@@ -13,7 +13,7 @@ def start_menu(N, scale, surface):
 
     # Display scaled background image.
     grid_scale = N * scale
-    image = pg.image.load('../img/start_menu.png')
+    image = pg.image.load('./img/start_menu.png')
     scaled_image = pg.transform.scale(image, (grid_scale, grid_scale))
     
     # Define start button.
