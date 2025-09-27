@@ -156,7 +156,7 @@ def animate(N, scale, surface, clock, font, diffusion=0, viscosity=0, dt=0.2, fa
                         video_writer = cv2.VideoWriter(
                             'fluid_sim.mp4',
                             cv2.VideoWriter_fourcc(*'mp4v'),
-                            30,
+                            60,
                             (N*scale, N*scale)
                         )
                     else: # Stop recording screen when stop recording pressed.
@@ -247,7 +247,7 @@ def animate(N, scale, surface, clock, font, diffusion=0, viscosity=0, dt=0.2, fa
         
         if recording and video_writer is not None: # Store current video frame.
             frame = pg.surfarray.array3d(surface)
-            frame = np.rot90(frame)
+            frame = np.flipud(np.rot90(frame))
             frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
             video_writer.write(frame)
 
