@@ -64,9 +64,5 @@ Contributions are welcomed and appreciated! Fork and create a pull request on [G
 
 ## Future
 There are several features left to implement (feel free to extend this):
-- Include hardware acceleration
-  - `torch` tensor instead of `numpy` array operations
-  - GPU-accelerated rendering
-  - `numba` JIT
-
+- GPU-based rendering with [Taichi](www.taichi-lang.org)
 - Erase boundaries instead of returning to start menu
